@@ -11,8 +11,8 @@ const Warning = props => {
       <div className={style.backdrop}></div>
       <Card className={style.modal}>
 
-        <header>
-          <h2 className={style.header}>{props.about}</h2>
+        <header className={style.header}>
+          <h2 >{props.about}</h2>
         </header>
         <div className={style.content}>
           <p>{props.children}</p>
