@@ -1,0 +1,13 @@
+.userDisplay{
+  margin-top: 50px;
+}
+
+.userDisplayData{
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  font-size: 2rem;
+  min-width: 100%;
+  border: 1px solid grey;
+  padding: 8px;
+}
