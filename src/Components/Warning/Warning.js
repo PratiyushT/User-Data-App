@@ -1,9 +1,11 @@
 
+import { useState } from "react";
 import Button from "../Button/Button";
 import Card from "../Card/Card";
 import style from "./Warning.module.css";
 
 const Warning = props => {
+  
   return (
     <div>
       <div className={style.backdrop}></div>
@@ -16,7 +18,7 @@ const Warning = props => {
           <p>{props.children}</p>
         </div>
         <footer className={style.actions}>
-          <Button>Okay</Button>
+          <Button onClick={props.onOkay}>Okay</Button>
         </footer>
       </Card>
     </div>
