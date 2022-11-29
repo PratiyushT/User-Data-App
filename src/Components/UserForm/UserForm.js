@@ -29,9 +29,14 @@ const UserForm = appProps => {
     setUserName('');
   }
 
+  const closeErrorHandler = () => {
+    setNotError(true);
+  }
+
+
   return (
     <div>
-      {!notError && <Warning about="Oops an notError Occured">No there is an issue</Warning>}
+      {!notError && <Warning onOkay={closeErrorHandler} about="Oops an notError Occured">No there is an issue</Warning>}
       <Card className={style.userFormCard}>
         <form>
           <div>
