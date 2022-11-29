@@ -3,8 +3,16 @@ import style from './UserDisplay.module.css'
 import Card from "../Card/Card";
 
 
-//Display data received from the userDatas array (App.js).
 const UserDisplay = appsProps => {
+
+  if (appsProps.userDatas.length === 0) {
+    return (
+      <Card className={style.userDisplay}>
+        <div className={style.userDisplayData}>No users were found.</div>
+      </Card>
+    )
+  }
+  //Else
   return (
     <Card className={style.userDisplay}>
       {appsProps.userDatas.map(user =>
