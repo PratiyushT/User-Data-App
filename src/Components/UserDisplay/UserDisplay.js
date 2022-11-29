@@ -4,12 +4,11 @@ import Card from "../Card/Card";
 
 
 //Display data received from the userDatas array (App.js).
-const UserDisplay = props => {
+const UserDisplay = appsProps => {
   return (
-
     <Card className={style.userDisplay}>
-      {props.userDatas.map(user =>
-        <div className={style.userDisplayData}>{`${user.name} (${user.age} years old)`}</div>)}
+      {appsProps.userDatas.map(user =>
+        <div key={Math.random().toString()} className={style.userDisplayData}>{`${user.name} (${user.age} years old)`}</div>)}
     </Card>
 
   )

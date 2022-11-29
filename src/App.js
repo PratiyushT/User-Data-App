@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import UserForm from "./Components/UserForm/UserForm";
 import UserDisplay from "./Components/UserDisplay/UserDisplay";
 
@@ -9,13 +9,17 @@ const dummy_data = [
 ]
 
 function App() {
-  let userDatasArr = [...dummy_data]
-  console.log(userDatasArr);
+  const [userDataArr, setUserDataArr] = useState(dummy_data);
+
+  const addUserHandler = user => {
+    setUserDataArr(prevUsers => [...prevUsers, user])
+  }
+  
   return (
 
     <div>
-      <UserForm />
-      <UserDisplay userDatas={userDatasArr} />
+      <UserForm onSubmitUserForm={addUserHandler} />
+      <UserDisplay userDatas={userDataArr} />
     </div>
   );
 }
