@@ -8,9 +8,9 @@ const UserDisplay = appsProps => {
   if (appsProps.userDatas.length === 0) {
     return (
       <Card className={style.userDisplay}>
-        <div className={style.userDisplayData}>No users were found.</div>
+        <div className={style.noExpensesDisplay}>No users were found.</div>
       </Card>
-    )
+      )
   }
   //Else
   return (
