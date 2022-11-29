@@ -28,18 +28,6 @@
   padding: 10px 12px;
 }
 
-.userFormCard form button {
-  border: none;
-  width: 110px;
-  height: 35px;
-  background-color: purple;
-  color: white;
-  font-size: 16px;
-}
-
-.userFormCard form button:hover {
-  background-color: rgb(98, 1, 98);
-}
 
 @media screen and (max-width:500px){
   .userFormCard form button {

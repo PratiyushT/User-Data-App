@@ -3,9 +3,9 @@ import style from './UserDisplay.module.css'
 import Card from "../Card/Card";
 
 
-const UserDisplay = appsProps => {
+const UserDisplay = appProps => {
 
-  if (appsProps.userDatas.length === 0) {
+  if (appProps.userDatas.length === 0) {
     return (
       <Card className={style.userDisplay}>
         <div className={style.noExpensesDisplay}>No users were found.</div>
@@ -15,7 +15,7 @@ const UserDisplay = appsProps => {
   //Else
   return (
     <Card className={style.userDisplay}>
-      {appsProps.userDatas.map(user =>
+      {appProps.userDatas.map(user =>
         <div key={Math.random().toString()} className={style.userDisplayData}>{`${user.name} (${user.age} years old)`}</div>)}
     </Card>
 
