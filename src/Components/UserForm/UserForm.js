@@ -39,7 +39,7 @@ const UserForm = appProps => {
 
 
   return (
-    <div>
+    <React.Fragment>
       {!notError && <Warning onOkay={closeErrorHandler} about="Oops an error occured">{errorObjHeading}</Warning>}
       <Card className={style.userFormCard}>
         <form>
@@ -56,7 +56,7 @@ const UserForm = appProps => {
           <Button type="submit" onClick={submitHandler}>Add User</Button>
         </form>
       </Card>
-    </div>
+    </React.Fragment>
   )
 }
 

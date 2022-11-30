@@ -1,16 +1,18 @@
 
-import { useState } from "react";
+import React from "react";
+import ReactDOM from "react-dom";
 import Button from "../Button/Button";
 import Card from "../Card/Card";
 import style from "./Warning.module.css";
 
-const Warning = props => {
-  
-  return (
-    <div>
-      <div className={style.backdrop}></div>
-      <Card className={style.modal}>
+const Backdrop = props => {
+  return <div onClick={props.onClick} className={style.backdrop}></div>
+}
 
+const ModalOverlay = props => {
+  return (
+    < React.Fragment>
+      <Card className={style.modal}>
         <header className={style.header}>
           <h2 >{props.about}</h2>
         </header>
@@ -21,7 +23,16 @@ const Warning = props => {
           <Button onClick={props.onOkay}>Okay</Button>
         </footer>
       </Card>
-    </div>
+    </React.Fragment>)
+}
+
+const Warning = props => {
+
+  return (
+    <React.Fragment>
+      {ReactDOM.createPortal(<Backdrop onClick={props.onOkay} />, document.getElementById('backdrop-root'))}
+      {ReactDOM.createPortal(<ModalOverlay about={props.about} onOkay={props.onOkay} children={props.children} />, document.getElementById('overlay-root'))}
+    </React.Fragment>
 
   )
 }

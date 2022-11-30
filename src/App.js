@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState }from 'react';
 import UserForm from "./Components/UserForm/UserForm";
 import UserDisplay from "./Components/UserDisplay/UserDisplay";
-
 
 function App() {
   const [userDataArr, setUserDataArr] = useState([]);
@@ -12,11 +11,10 @@ function App() {
 
   return (
 
-    <div>
+    <React.Fragment>
       <UserForm onSubmitUserForm={addUserHandler} />
       <UserDisplay userDatas={userDataArr} />
-
-    </div>
+    </React.Fragment>
   );
 }
 
