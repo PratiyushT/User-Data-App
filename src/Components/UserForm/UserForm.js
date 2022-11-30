@@ -10,13 +10,18 @@ const UserForm = appProps => {
   const inputNameRef = useRef('');
   const inputAgeRef = useRef('');
 
-  const [errorObjHeading, setErrorObjHeading] = useState('')
-  const [notError, setNotError] = useState(true)
+  const [errorObjHeading, setErrorObjHeading] = useState('');
+  const [notError, setNotError] = useState(true);
 
   const submitHandler = event => {
     event.preventDefault();
     const userName = inputNameRef.current.value;
     const userAge = inputAgeRef.current.value;
+
+    if (appProps.userDatas.some(e => e.name === userName && e.age === userAge)) {
+      setNotError(false);
+      return setErrorObjHeading('User already exists');
+    }
 
     if (userName.trim().length === 0 || (userAge < 1)) {
       setNotError(false);

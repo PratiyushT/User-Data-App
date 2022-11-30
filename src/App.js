@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React, { useState } from 'react';
 import UserForm from "./Components/UserForm/UserForm";
 import UserDisplay from "./Components/UserDisplay/UserDisplay";
 
@@ -12,7 +12,7 @@ function App() {
   return (
 
     <React.Fragment>
-      <UserForm onSubmitUserForm={addUserHandler} />
+      <UserForm onSubmitUserForm={addUserHandler} userDatas={userDataArr} />
       <UserDisplay userDatas={userDataArr} />
     </React.Fragment>
   );
